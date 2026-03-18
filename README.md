@@ -3,10 +3,10 @@
 A simple REST API built with **Spring Boot 3.x**, **Spring Data JPA**, and **PostgreSQL** for full CRUD operations on the `person` table.
 
 ## Features
-- GET `/persons` — Fetch all persons
-- POST `/persons` — Create a new person
-- PUT `/persons/{id}` — Update person by ID
-- DELETE `/persons/{id}` — Delete person by ID
+- GET `/person/fetch` — Fetch all persons
+- POST `/person/insert` — Create a new person
+- PUT `/person/fetchId/{id}` — Update person by ID
+- DELETE `/person/delete/{id}` — Delete person by ID
 
 ## Technologies Used
 - Java 21
