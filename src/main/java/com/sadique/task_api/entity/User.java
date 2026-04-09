@@ -26,6 +26,7 @@ public class User {
     @JsonManagedReference
     @OneToMany(mappedBy = "user")
     private List<Task> tasks = new ArrayList<>();
+    private List<String>roles;
 
 
 }
