@@ -34,6 +34,7 @@ build/
 .vscode/
 # Database and sensitive config
 application.properties
+src/main/resources/application.properties
 application.yml
 *.env
-src/main/resources/application.properties
+
