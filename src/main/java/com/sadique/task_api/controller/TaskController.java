@@ -6,6 +6,8 @@ import com.sadique.task_api.service.UserService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,13 +20,13 @@ public class TaskController {
     private UserService userService;
 
 
-    @GetMapping("{userName}")
-    public ResponseEntity<?> getAllTaskByUser(@PathVariable String userName){
-        return taskService.getAllTaskByUser(userName);
+    @GetMapping()
+    public ResponseEntity<?> getAllTaskByUser(){
+        return taskService.getAllTaskByUser();
     }
-    @PostMapping("{userName}")
-    public ResponseEntity<?> createEntry(@PathVariable String userName, @RequestBody Task task){
-        return taskService.createEntry(task, userName);
+    @PostMapping()
+    public ResponseEntity<?> createEntry(@RequestBody Task task){
+        return taskService.createEntry(task);
     }
 
     @GetMapping("/id/{id}")
@@ -34,13 +36,17 @@ public class TaskController {
 
     @DeleteMapping("/id/{id}")
     public ResponseEntity<?> deletebyId(@PathVariable Integer id){
-        return taskService.deletebyId(id);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String name = authentication.getName();
+        return taskService.deletebyId(id,name);
     }
 
     @Transactional
     @PutMapping("/id/{id}")
     public ResponseEntity<?>updateTaskbyId(@PathVariable int id, @RequestBody Task task){
-        return taskService.updateTaskbyID(id,task);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String name = authentication.getName();
+        return taskService.updateTaskbyID(id,task,name);
     }
 
 }

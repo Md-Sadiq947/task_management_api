@@ -21,11 +21,6 @@ public class UserController {
     private UserRepository userRepository;
 
 
-    @PostMapping
-    public ResponseEntity<?> saveEntry(@RequestBody User user){
-        return userService.insert(user);
-    }
-
     @GetMapping("/fetchId/{myid}")
     public ResponseEntity<?> getbyId(@PathVariable Integer myid){
         return userService.getbyId(myid);

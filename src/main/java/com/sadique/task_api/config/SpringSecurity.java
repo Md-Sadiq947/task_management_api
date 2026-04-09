@@ -26,7 +26,8 @@ public class SpringSecurity {
                 .userDetailsService(userDetailServiceIMPL)
                 .csrf(AbstractHttpConfigurer::disable) // Pehle CSRF disable karo
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/task/**","/user/**","/user").authenticated() // Lock this
+                        .requestMatchers("/task/**","/user/**","/user").authenticated()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")// Lock this
                         // Explicitly open these
                         .anyRequest().permitAll() // Safety net: open everything else
                 )

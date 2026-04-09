@@ -37,6 +37,16 @@ public class UserService {
         return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
     }
 
+    public ResponseEntity<?>saveAdmin(User user){
+        try {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setRoles(Arrays.asList("USER","ADMIN"));
+            return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
     public ResponseEntity<?>insertnewUser(User user){
         return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
     }
