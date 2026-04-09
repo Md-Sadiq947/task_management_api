@@ -1,41 +1,4 @@
-# Task Management REST API 🚀
-
-A robust Backend API developed using **Java** and **Spring Boot**, designed to help users organize and track their daily tasks. This project demonstrates the implementation of relational database management with **PostgreSQL** and clean RESTful principles.
-
-## 🛠 Tech Stack
-- **Language:** Java 17+
-- **Framework:** Spring Boot 3.x
-- **Database:** PostgreSQL
-- **Persistence:** Spring Data JPA (Hibernate)
-- **API Testing:** Postman
-
-## ✨ Core Features
-- **User Management:** Full CRUD operations for User profiles.
-- **Task Organization:** Assign specific tasks to users using **One-to-Many** bidirectional relationships.
-- **Data Integrity:** Handled using `@Transactional` to ensure safe database updates.
-- **Efficient Retrieval:** Custom JPA Query derivation (e.g., `findByUserName`).
-- **Clean JSON Responses:** Optimized data serialization using `@JsonManagedReference` and `@JsonBackReference` to prevent infinite recursion.
-
-## 📂 Project Structure
-- `controller/`: Handles HTTP requests and maps them to service methods.
-- `service/`: Contains the core business logic and transaction management.
-- `entity/`: Defines the database schema using JPA annotations.
-- `repository/`: Interface for direct database interaction.
-
-## 🚀 Getting Started
-
-### Prerequisites
-- JDK 17 or higher
-- Maven 3.x
-- PostgreSQL installed and running
-
-### Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Md-Sadiq947/task_management_api.git](https://github.com/Md-Sadiq947/task_management_api.git)
-
-2. **Database Configuration
-    # Task Management REST API 🚀
+ # Task Management REST API 🚀
 
 A robust Backend API developed using **Java** and **Spring Boot**, designed to help users organize and track their daily tasks. This project demonstrates the implementation of relational database management with **PostgreSQL** and clean RESTful principles.
 
