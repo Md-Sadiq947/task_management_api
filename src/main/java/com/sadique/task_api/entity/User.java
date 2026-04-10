@@ -8,6 +8,8 @@ import org.springframework.stereotype.Indexed;
 
 import java.util.ArrayList;
 import java.util.List;
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 @Entity
 @Table(name = "users")
@@ -15,6 +17,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(hidden = true)
     private long id;
 
 
@@ -25,7 +28,9 @@ public class User {
 
     @JsonManagedReference
     @OneToMany(mappedBy = "user")
+    @Schema(hidden = true)
     private List<Task> tasks = new ArrayList<>();
+    @Schema(hidden = true)
     private List<String>roles;
 
 

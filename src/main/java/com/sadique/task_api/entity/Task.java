@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDate;
 
 @Entity
@@ -14,7 +14,9 @@ import java.time.LocalDate;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(hidden = true)
     private int id;
+    @Schema(hidden = true)
     private LocalDate createdAt;
     private String title;
     private String description;
@@ -23,5 +25,6 @@ public class Task {
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @Schema(hidden = true)
     private User user;
 }
