@@ -42,7 +42,7 @@ This project follows the standard **Controller-Service-Repository** pattern to e
 ## ⚙️ Local Setup
 1. **Clone the repo:**
    ```bash
-   git clone [https://github.com/Md-Sadiq947/task-management-api.git](https://github.com/Md-Sadiq947/task-management-api.git)
+   git clone [https://github.com/Md-Sadiq947/task-management-api.git]
    
 2. **Configure Databases**
    Update src/main/resources/application.properties with your PostgreSQL credentials.
